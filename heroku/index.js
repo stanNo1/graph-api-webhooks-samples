@@ -37,14 +37,14 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 });
 
 app.post('/facebook', function(req, res) {
-  if (req.isXHubValid() != undefined) {
-    console.log('-----req.isXHubValid-----', req.isXHubValid().toString());
-    if (!req.isXHubValid()) {
-      console.log('Warning - request header X-Hub-Signature not present or invalid');
-      res.sendStatus(401);
-      return;
-    }
-  }
+  // if (req.isXHubValid() != undefined) {
+  //   console.log('-----req.isXHubValid-----', req.isXHubValid().toString());
+  //   if (!req.isXHubValid()) {
+  //     console.log('Warning - request header X-Hub-Signature not present or invalid');
+  //     res.sendStatus(401);
+  //     return;
+  //   }
+  // }
   console.log('-----body-----', JSON.stringify(req.body));
   // Process the Facebook updates here
   received_updates.unshift(req.body);
